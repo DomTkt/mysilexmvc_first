@@ -1,0 +1,47 @@
+<h2>Formulaire</h2>
+
+{% if user is defined %}
+<form method="post" name="formulaire" action="{{ url('users.save', {id: user.id}) }}">
+
+    <input type="hidden" name="id" value={{user.id}} />
+
+    <label for="name">Nom : </label>
+    <input type="text" name="nom" value={{user.nom}} />
+    
+    <label for="name">Groupe : </label>
+    <input type="text" name="groupe" value={{user.groupe}} />
+
+    <label for="name">Prénom : </label>
+    <input type="text" name="prenom" value={{user.prenom}}  />
+    
+    <label for="name">Départ : </label>
+    <input type="text" name="depart" value={{user.depart}}  />
+    
+    <label for="name">Arrivé : </label>
+    <input type="text" name="arrive" value={{user.arrive}}  />
+    
+    {% else %}
+<form method="post" name="formulaire" action="{{ url('users.save') }}">
+    <label for="name">Nom : </label>
+    <input type="text" name="nom" />
+
+    <label for="name">Prénom : </label>
+    <input type="text" name="prenom" />
+    
+    <label for="name">Groupe : </label>
+    <input type="text" name="groupe" />
+    
+    <label for="name">Départ : </label>
+    <input type="text" name="depart" />
+    
+    <label for="name">Arrive : </label>
+    <input type="text" name="arrive" />
+    
+       
+    
+    
+    {% endif %}
+    
+    <button type="submit">Envoyer</button>
+
+</form>
